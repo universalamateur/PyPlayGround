@@ -161,3 +161,7 @@ Thumbs.db
 # Ignore all local history of files
 .history
 .ionide
+
+### CSV files out
+# Ignore CSV files
+.csv

@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import pyautogui
 import time
 
 """This script will simulate a keypress and prevent Windows from locking
@@ -10,9 +9,7 @@ def no_lock(button):
     try:
         print ('Press CTRL+C to stop.')
         while True:
-            pyautogui.press(button)     # Key pressed
             time.sleep(2)
-            pyautogui.press(button)     # Key released
             time.sleep(3)
 
     except Exception as ex:
