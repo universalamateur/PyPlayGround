@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 def primeOrNot(number):
     if number==1 or (number % 2 == 0 and number > 2):
         return "Not prime"

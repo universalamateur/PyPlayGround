@@ -146,6 +146,8 @@ Thumbs.db
 # profiling data
 .prof
 
+# CSV Files
+*.csv
 
 ### VisualStudioCode ###
 .vscode/*
@@ -159,3 +161,7 @@ Thumbs.db
 # Ignore all local history of files
 .history
 .ionide
+
+### CSV files out
+# Ignore CSV files
+.csv
