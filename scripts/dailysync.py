@@ -10,7 +10,7 @@ import multiprocessing
 """
 
 def run(folder):
-  # Do something with task here
+    # Do something with task here
     print("Handling rsync in: {}".format(folder))
     dest = os.path.join(os.path.expanduser("~"), "data", "prod_backup")
     subprocess.call(["rsync", "-arq", folder, dest])
