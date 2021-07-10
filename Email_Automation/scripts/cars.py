@@ -74,11 +74,11 @@ def main(argv):
   new_summary = '<br/>'.join(summary)
   new2_summary = '\n'.join(summary)
   # TODO: turn this into a PDF report
-  #path_pdf=os.path.abspath(os.path.join(os.sep, "tmp","cars.pdf"))
-  #report(path_pdf, "Cars report", new_summary, cars_dict_to_table(data))
+  path_pdf=os.path.abspath(os.path.join(os.sep, "tmp","cars.pdf"))
+  report(path_pdf, "Cars report", new_summary, cars_dict_to_table(data))
   # TODO: send the PDF report as an email attachment
-  #msg = email_generate("automation@example.com", "student-01-89511c72f289@example.com", "Sales summary for last month", new2_summary, path_pdf)
-  #email_send(msg)
+  msg = email_generate("automation@example.com", "student-01-89511c72f289@example.com", "Sales summary for last month", new2_summary, path_pdf)
+  email_send(msg)
 
 if __name__ == "__main__":
   main(sys.argv)
