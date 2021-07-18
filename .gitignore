@@ -142,20 +142,13 @@ dmypy.json
 # file properties cache/storage on macOS
 *.DS_Store
 # thumbnail cache on Windows
-Thumbs.db
+**/?humbs.db
 
 # profiling data
 .prof
 
-# CSV Files
-*.csv
-
 ### VisualStudioCode ###
-.vscode/*
-.vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/extensions.json
+**/.vscode
 *.code-workspace
 
 ### VisualStudioCode Patch ###
@@ -165,4 +158,7 @@ Thumbs.db
 
 ### CSV files out
 # Ignore CSV files
-.csv
+*.csv
+
+### Deta Config folders out
+**/.deta/
