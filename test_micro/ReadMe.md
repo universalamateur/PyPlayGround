@@ -69,4 +69,24 @@ deta deploy
 
 8. Visiting the Endpoint
 
-under *https://<path>.deta.dev* out of the *deta details* command the app is visible
+under *`https://<path>.deta.dev`* out of the *`deta details`* command the app is visible
+
+## Additional Info
+
+We need to call our app instance *app* and it has to be in a file called *main.py*, which is the only required file for a Python Micro. Of course we can add more files and folders.
+
+## Changes on Base Structure 
+
+Inspiration from [Digital ocean without the docker part](https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-18-04)
+
+HomeDir
+|-app
+|-app-tepmplates
+|-app-tepmplates-home.html
+|-app-__init.py__
+|-app-views.py
+|-main.py
+
+- main.py just imports the module app `from app import app`
+- *-app-__init.py__* imports flask and views.py
+- *-app-views.py* has the trigger in it, which are shown in different http calls and imports templates to work with it
