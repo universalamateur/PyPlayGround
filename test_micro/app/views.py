@@ -44,7 +44,7 @@ data_excuses = {
 }
 
 @app.route('/', methods=["GET"])
-def homr():
+def home():
     date_string = str(datetime.datetime.today().strftime('%Y-%m-%d'))
     return f"<h1>First Try on API Design</h1><p>This site is a prototype API.</p><b>There has been a change {date_string}</b>"
 
@@ -69,7 +69,15 @@ def api_custom():
     else:
         return "Error: No name provided. Please specify a name."
     
-    # Create with the given name a custome excuse with random Intro - Scapegoat and Delay
+    # Create with the given name a custome excuse with random Intro, Scapegoat and Delay
     custom_excuse['excuse'] = f'Dear {name_custom}, {data_excuses["Intros"][random.randint(0, len(data_excuses["Intros"])-1)]} {data_excuses["Scapegoat"][random.randint(0, len(data_excuses["Scapegoat"])-1)]} {data_excuses["Delay"][random.randint(0, len(data_excuses["Delay"])-1)]}'
 
     return jsonify(custom_excuse)
+
+# A route to return a random excuse
+@app.route('/api/v1/excuses/random', methods=['GET'])
+def api_random():
+	random_excuse={}
+	# Create a random excuse with random Intro Scapegoat and Delay
+	random_excuse['excuse'] = f'{data_excuses["Intros"][random.randint(0, len(data_excuses["Intros"])-1)]} {data_excuses["Scapegoat"][random.randint(0, len(data_excuses["Scapegoat"])-1)]} {data_excuses["Delay"][random.randint(0, len(data_excuses["Delay"])-1)]}'
+	return jsonify(random_excuse)
