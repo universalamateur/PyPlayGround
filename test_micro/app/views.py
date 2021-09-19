@@ -34,6 +34,19 @@ def put_excuses(data):
 # A route to return all of the available entries in data.
 @app.route('/api/v1/excuses/putall', methods=['GET'])
 def api_put_all():
+    """DESCRIPTION.
+    ---
+    get:
+      description: Get all excuses in db
+      security:
+        - ApiKeyAuth: []
+      responses:
+        200:
+          description: return all excuses
+          content:
+            application/json:
+              schema: Excuse shemata
+    """
     # Data
     data_excuses = [{ "order": "Intros", "content": "Sorry I can't come", "class": "SFW" }, { "order": "Intros", "content": "Please forgive my absence", "class": "SFW" }, { "order": "Intros", "content": "This is going to sound crazy but", "class": "SFW" }, { "order": "Intros", "content": "Get this:", "class": "SFW" }, { "order": "Intros", "content": "I can't go because", "class": "SFW" }, { "order": "Intros", "content": "I can't go because", "class": "SFW" }, { "order": "Intros", "content":"I know you're going to hate me but", "class": "SFW" }, { "order": "Intros", "content": "I was minding my own business and boom!", "class": "SFW" }, { "order": "Intros", "content": "I feel terrible but", "class": "SFW" }, { "order": "Intros", "content": "I regretfully cannot attend,", "class": "SFW" }, { "order": "Intros", "content": "This is going to sound like an excuse but", "class": "SFW" }, { "order": "Scapegoat", "content": "my nephew", "class": "SFW" }, { "order": "Scapegoat", "content": "the ghost of Hitler", "class": "NSFW" }, { "order": "Scapegoat", "content": "the Pope", "class": "SFW" }, { "order": "Scapegoat", "content": "my ex", "class": "SFW" }, { "order": "Scapegoat", "content": "high school marching band", "class": "SFW" }, { "order": "Scapegoat", "content": "a sad clown", "class": "SFW" }, { "order": "Scapegoat", "content": "the kid from Air Bud", "class": "SFW" }, { "order": "Scapegoat", "content": "a professional cricket team", "class": "SFW" }, { "order": "Scapegoat", "content": "my Tinder date", "class": "NSFW" }, { "order": "Delay", "content": "just shit the bed", "class": "NSFW" }, { "order": "Delay", "content": "died in front of me", "class": "SFW" }, { "order": "Delay", "content": "won't stop telling me knock knock jokes", "class": "SFW" }, { "order": "Delay", "content": "is having a nervous breakdown", "class": "SFW" }, { "order": "Delay", "content": "gave me syphilis", "class": "NSFW" }, { "order": "Delay", "content": "poured lemonade in my gas tank", "class": "SFW" }, { "order": "Delay", "content": "stabbed me", "class": "SFW" }, { "order": "Delay", "content": "found my box of human teeth", "class": "SFW" }, { "order": "Delay", "content": "stole my bicycle", "class": "SFW" }, { "order": "Delay", "content": "posted my nudes on Instagram", "class": "SFW" }]
     put_returns = []
