@@ -16,11 +16,23 @@ def about_page():
     """
     return "<h1>The About Page</h1>"
 
+def create_sql_conection():
+    return ""
+
+def run_query(query):
+    """ Returns the results from a SQL query
+    """
+    connection = create_sql_conection()
+    result = connection.execute(query)
+    return result
+
 @app.route('/about/<string:username>')
 def about_user(username):
-    """ Returns from a dynamic route and escaped Html element
+    """ Returns the users profile from the database to the web front end
     """
-    return f'user {escape(username)}'
+    sql_query = f'SELECT * FROM profiles WHERE user_id = {username}'
+    result = run_query(sql_query)
+    return f'<p>{result}</p>'
 
 if __name__ == '__main__':
     app.run(debug=True)
