@@ -10,12 +10,6 @@ def home_page():
     """
     return render_template("home.html")
 
-@app.route("/about/")
-def about_page():
-    """ Returns an H1 HTML element
-    """
-    return "<h1>The About Page</h1>"
-
 @app.route('/about/<string:username>')
 def about_user(username):
     """ Returns from a dynamic route and escaped Html element
